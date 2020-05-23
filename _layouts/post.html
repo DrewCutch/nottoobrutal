@@ -1,0 +1,19 @@
+---
+layout: default
+---
+<div id="post-title">
+  <h1>{{page.title}}</h1>
+  <p>By {{page.author}} - {{page.date | date: "%-d %B %Y"}}</p>
+</div>
+
+{{ content }}
+
+{% include related_posts.html %}
+
+{% if site.disqus.shortname %}
+  {% include disqus_comments.html %}
+{% endif %}
+
+{% if page.use_math %}
+  {% include mathjax.html %}
+{% endif %}
